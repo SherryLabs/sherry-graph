@@ -1,0 +1,32 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Brand
+    network: base-sepolia
+    source:
+      address: "0x61f1A83641BE8D38B64d6Dd8A9Ce27A790910AdB"
+      abi: Brand
+      startBlock: 16425081
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - BrandCreated
+        - BrandUpdated
+        - OwnershipTransferred
+      abis:
+        - name: Brand
+          file: ./abis/Brand.json
+      eventHandlers:
+        - event: BrandCreated(indexed uint256,indexed address,string)
+          handler: handleBrandCreated
+        - event: BrandUpdated(indexed uint256,indexed address,string)
+          handler: handleBrandUpdated
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+      file: ./src/brand.ts

@@ -1,0 +1,28 @@
+type BrandCreated @entity(immutable: true) {
+  id: Bytes!
+  idBrand: BigInt! # uint256
+  brandOwner: Bytes! # address
+  name: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type BrandUpdated @entity(immutable: true) {
+  id: Bytes!
+  idBrand: BigInt! # uint256
+  brandOwner: Bytes! # address
+  name: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OwnershipTransferred @entity(immutable: true) {
+  id: Bytes!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

@@ -1,0 +1,8 @@
+{
+  "base-sepolia": {
+    "Brand": {
+      "address": "0x61f1A83641BE8D38B64d6Dd8A9Ce27A790910AdB",
+      "startBlock": 16425081
+    }
+  }
+}
