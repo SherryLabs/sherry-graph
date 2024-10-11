@@ -26,3 +26,97 @@ type OwnershipTransferred @entity(immutable: true) {
   blockTimestamp: BigInt!
   transactionHash: Bytes!
 }
+type CampaignCreated @entity(immutable: true) {
+  id: Bytes!
+  idCampaign: BigInt! # uint256
+  idBrand: BigInt! # uint256
+  name: String! # string
+  amount: BigInt! # uint256
+  startDate: BigInt! # uint256
+  endDate: BigInt! # uint256
+  uri: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type CampaignUpdated @entity(immutable: true) {
+  id: Bytes!
+  idCampaign: BigInt! # uint256
+  name: String! # string
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type CampaignOwnershipTransferred @entity(immutable: true) {
+  id: Bytes!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+type CampaignContractUpdated @entity(immutable: true) {
+  id: Bytes!
+  campaignContract: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type KolCampaignAdded @entity(immutable: true) {
+  id: Bytes!
+  idKolCampaign: BigInt! # uint256
+  kol: Bytes! # address
+  idCampaign: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type KolJoined @entity(immutable: true) {
+  id: Bytes!
+  kol: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type KOLOwnershipTransferred @entity(immutable: true) {
+  id: Bytes!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+type SherryOwnershipTransferred @entity(immutable: true) {
+  id: Bytes!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PostCreated @entity(immutable: true) {
+  id: Bytes!
+  idPost: BigInt! # uint256
+  kol: Bytes! # address
+  idCampaign: BigInt! # uint256
+  url: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Voted @entity(immutable: true) {
+  id: Bytes!
+  idPost: BigInt! # uint256
+  voter: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

@@ -8,9 +8,9 @@ dataSources:
     name: Brand
     network: base-sepolia
     source:
-      address: "0x61f1A83641BE8D38B64d6Dd8A9Ce27A790910AdB"
+      address: "0x5907d70Dcb0D658801d531F17D3952368f37b182"
       abi: Brand
-      startBlock: 16425081
+      startBlock: 16442742
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -30,3 +30,85 @@ dataSources:
         - event: OwnershipTransferred(indexed address,indexed address)
           handler: handleOwnershipTransferred
       file: ./src/brand.ts
+  - kind: ethereum
+    name: Campaign
+    network: base-sepolia
+    source:
+      address: "0x8Fb01f3d9c4d0639F200E9ae5B1929fe1563c65a"
+      abi: Campaign
+      startBlock: 16442742
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - CampaignCreated
+        - CampaignUpdated
+        - CampaignOwnershipTransferred
+      abis:
+        - name: Campaign
+          file: ./abis/Campaign.json
+      eventHandlers:
+        - event: CampaignCreated(indexed uint256,indexed
+            uint256,string,uint256,uint256,uint256,string)
+          handler: handleCampaignCreated
+        - event: CampaignUpdated(indexed uint256,string,uint256)
+          handler: handleCampaignUpdated
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+      file: ./src/campaign.ts
+  - kind: ethereum
+    name: KOL
+    network: base-sepolia
+    source:
+      address: "0xfCf749b848f04d28339D4212eb15a757c6d18C8a"
+      abi: KOL
+      startBlock: 16442742
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - CampaignContractUpdated
+        - KolCampaignAdded
+        - KolJoined
+        - KOLOwnershipTransferred
+      abis:
+        - name: KOL
+          file: ./abis/KOL.json
+      eventHandlers:
+        - event: CampaignContractUpdated(indexed address)
+          handler: handleCampaignContractUpdated
+        - event: KolCampaignAdded(indexed uint256,indexed address,uint256)
+          handler: handleKolCampaignAdded
+        - event: KolJoined(indexed address)
+          handler: handleKolJoined
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+      file: ./src/kol.ts
+  - kind: ethereum
+    name: Sherry
+    network: base-sepolia
+    source:
+      address: "0x9B14d31eAc8Cc7fCb372cEE87de67c8697183a28"
+      abi: Sherry
+      startBlock: 16442742
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - SherryOwnershipTransferred
+        - PostCreated
+        - Voted
+      abis:
+        - name: Sherry
+          file: ./abis/Sherry.json
+      eventHandlers:
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: PostCreated(indexed uint256,indexed address,indexed uint256,string)
+          handler: handlePostCreated
+        - event: Voted(indexed uint256,indexed address)
+          handler: handleVoted
+      file: ./src/sherry.ts
