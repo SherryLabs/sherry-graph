@@ -36,7 +36,7 @@ dataSources:
     source:
       address: "0xc9188127359280EF92C643701c3E30DFd2aa1dE0"
       abi: Campaign
-      startBlock: 16461922
+      startBlock: 16804807
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
