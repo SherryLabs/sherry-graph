@@ -1,0 +1,72 @@
+name: Historia de Usuario
+description: Crea una historia de usuario con criterios claros y bien estructurados.
+title: "[US] - "
+labels: [user-story]
+assignees:
+  - tu-usuario-github
+body:
+  - type: markdown
+    attributes:
+      value: |
+        🎯 **Historia de Usuario**
+        Completa los campos para definir una historia clara y priorizada.
+  - type: input
+    id: user_story
+    attributes:
+      label: Como [tipo de usuario], quiero [acción], para [beneficio]
+      placeholder: Ej. Como usuario, quiero poder conectar mi wallet, para ver mi balance.
+  - type: textarea
+    id: contexto
+    attributes:
+      label: Contexto
+      description: Describe brevemente por qué esta historia es necesaria y qué la dispara.
+      placeholder: Ej. Esta funcionalidad se necesita para el onboarding en la MiniApp...
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Criterios de Aceptación
+      description: Lista de comportamientos esperados para que se considere "hecho".
+      placeholder: |
+        - [ ] La wallet debe conectarse con MetaMask y WalletConnect
+        - [ ] Debe mostrar el balance del token principal
+        - [ ] Debe funcionar tanto en mobile como desktop
+  - type: textarea
+    id: inputs
+    attributes:
+      label: Inputs / Parámetros (si aplica)
+      placeholder: Ej. tokenAddress, userId, transactionHash
+  - type: textarea
+    id: mockups
+    attributes:
+      label: Mockups o Diseño (si existe)
+      placeholder: Link a Figma, screenshots, diagramas...
+  - type: textarea
+    id: notas
+    attributes:
+      label: Notas Técnicas
+      placeholder: Hooks usados, archivos clave, dependencias internas, etc.
+  - type: checkboxes
+    id: dependencias
+    attributes:
+      label: Dependencias
+      options:
+        - label: Esta historia depende de otra tarea
+        - label: Esta historia bloquea otra tarea
+  - type: input
+    id: responsable
+    attributes:
+      label: Responsable
+      placeholder: @nombre-dev
+  - type: dropdown
+    id: prioridad
+    attributes:
+      label: Prioridad
+      options:
+        - Alta
+        - Media
+        - Baja
+  - type: input
+    id: fecha
+    attributes:
+      label: Fecha estimada de entrega
+      placeholder: Ej. 20/04/2025
