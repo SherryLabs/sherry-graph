@@ -2,8 +2,6 @@ name: Historia de Usuario
 description: Crea una historia de usuario con criterios claros y bien estructurados.
 title: "[US] - "
 labels: [user-story]
-assignees:
-  - tu-usuario-github
 body:
   - type: markdown
     attributes:
@@ -13,13 +11,14 @@ body:
   - type: input
     id: user_story
     attributes:
-      label: Como [tipo de usuario], quiero [acción], para [beneficio]
+      label: Historia
+      description: Como [tipo de usuario], quiero [acción], para [beneficio]
       placeholder: Ej. Como usuario, quiero poder conectar mi wallet, para ver mi balance.
   - type: textarea
     id: contexto
     attributes:
       label: Contexto
-      description: Describe brevemente por qué esta historia es necesaria y qué la dispara.
+      description: ¿Por qué se necesita esta historia? ¿Qué la dispara?
       placeholder: Ej. Esta funcionalidad se necesita para el onboarding en la MiniApp...
   - type: textarea
     id: criterios
